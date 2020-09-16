@@ -1,0 +1,14 @@
+<form method="post" action="/mentor/mentor-register" id="login1">
+<h2>Enter the OTP</h2>
+            
+        <label><B>Otp has been sent to your email:</B>
+            <input type="text" name="code" placeholder="Enter Password" required>
+            </label><br><br>
+            <input type="hidden" name="name" value="<%= name%>">
+            <input type="hidden" name="email" value="<%= email%>">
+            <input type="hidden" name="password" value="<%= password%>">
+            <input type="hidden" name="expert" value="<%= expert%>">
+            <input type="hidden" name="designation" value="<%= designation%>">
+     <button type="submit"><b>Submit</b></button> 
+		
+</form>

@@ -1,0 +1,189 @@
+<div class="ripple-background">
+  <div class="circle xxlarge shade1"></div>
+  <div class="circle xlarge shade2"></div>
+  <div class="circle large shade3"></div>
+  <div class="circle mediun shade4"></div>
+  <div class="circle small shade5"></div>
+</div>
+
+<div class="centre">
+<div class="w3-bar w3-blue" style="border: 2px solid white;">
+  <button class="w3-bar-item w3-button" onclick="openForm('login')">Login</button>
+  <button class="w3-bar-item w3-button" onclick="openForm('register')">Register</button>
+</div>
+
+<form action="/mentor/mentor-login" method="post" class="self" id="login" style="display:none">
+<h1>Welcome Back!</h1>
+<label>Your Email</label><br>
+<input type="text" name="email" placeholder="Enter the registered Email"></input>
+<br><br>
+
+<label>Your Password</label><br>
+<input type="password" name="password" placeholder="Enter the password"></input>
+<br><br>
+
+<button type="submit" class="w3-button w3-white w3-border w3-border-black w3-hover-blue">Login</button>
+
+</form>
+
+<form action="/mentor/mentor-code" method="post" class="self" id="register" >
+<h1>Register as Mentor!</h1>
+<label>Name</label><br>
+<input type="text" name="name" placeholder="Enter your Name"></input>
+<br><br>
+
+<label>Your Email</label><br>
+<input type="email" name="email" placeholder="Enter your Email"></input>
+<br><br>
+
+<label>Your Password</label><br>
+<input type="password" name="password" placeholder="Enter the password"></input>
+<br><br>
+
+<label>Expertiese</label><br>
+<input type="text" name="expert" placeholder="Enter the Field. For ex. Web Development, AR/VR."></input>
+<br><br>
+
+<label>Your Designation</label><br>
+<input type="text" name="designation" placeholder="Enter your Designation"></input>
+<br><br>
+
+<button type="submit" class="w3-button w3-white w3-border w3-border-black w3-hover-blue">Register</button>
+
+</form>
+</div>
+
+<script>
+function openForm(formName) {
+  var i;
+  var x = document.getElementsByClassName("self");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(formName).style.display = "block";
+}
+</script>
+
+<style>
+
+body{
+  background: black;
+}
+
+
+.circle{
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  animation: ripple 15s infinite;
+  box-shadow: 0px 0px 1px 0px #508fb9;
+}
+
+.small{
+  width: 200px;
+  height: 200px;
+  left: -100px;
+  bottom: -100px;
+}
+
+.medium{
+  width: 400px;
+  height: 400px;
+  left: -200px;
+  bottom: -200px;
+}
+
+.large{
+  width: 600px;
+  height: 600px;
+  left: -300px;
+  bottom: -300px;
+}
+
+.xlarge{
+  width: 800px;
+  height: 800px;
+  left: -400px;
+  bottom: -400px;
+}
+
+.xxlarge{
+  width: 1000px;
+  height: 1000px;
+  left: -500px;
+  bottom: -500px;
+}
+
+.shade1{
+  opacity: 0.2;
+}
+.shade2{
+  opacity: 0.5;
+}
+
+.shade3{
+  opacity: 0.7;
+}
+
+.shade4{
+  opacity: 0.8;
+}
+
+.shade5{
+  opacity: 0.9;
+}
+
+@keyframes ripple{
+  0%{
+    transform: scale(0.8);
+  }
+  
+  50%{
+    transform: scale(1.2);
+  }
+  
+  100%{
+    transform: scale(0.8);
+  }
+}
+
+.centre
+{
+font-size: 120%;
+color: white;
+display: block;
+margin : 6%;
+padding: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  vertical-align: middle;
+  border-radius: 25px;
+background: rgb(0,150,121);
+background: linear-gradient(27deg, rgba(0,150,121,1) 0%, rgba(0,212,255,1) 100%);
+}
+label
+{
+font-weight: bold;
+padding: 1%;
+}
+input
+{
+border: none;
+border-bottom: 2px solid white;
+background: transparent;
+color: white;
+width: 100%;
+padding: 1%;
+}
+
+::placeholder
+{
+color: white;
+}
+.self
+{
+padding: 1%;
+}
+
+</style>

@@ -1,0 +1,92 @@
+<div class="image-container">
+  <div class="text">Dashboard</div>
+</div>
+<div class="container" style="text-align:center;">
+
+<div class="centre">
+<div calss="det">
+<p>Name: <%= mentor.name%></p>
+<p>Email: <%= mentor.email%></p>
+<p>Expertise: <%= mentor.expert%></p>
+<p>Designation: <%= mentor.designation%></p>
+</div>
+<br>
+<div class="add-blog">
+<h1>Add Event</h1>
+<form method="post" action="mentor/mentor-dashboard/add-event" id="blog-form">
+
+            <label><B>Title:</B>
+            <input type="text" name="title" form = "blog-form" placeholder="Enter the Title" required>
+            </label><br><br>
+            <label><B>Link:</B>
+            <input type="text" name="link" form = "blog-form" placeholder="Enter the Link" required>
+            </label><br><br>	
+	    <label><B>Blog:</B><br><br>
+	  <textarea id="content1" name="content" form = "blog-form"></textarea>
+	  <br><br></label>
+	  <input type="hidden" name="author" form = "blog-form" value="<%= mentor.name%>">
+       <button type="submit"><b>Save</b></button> 
+</form>
+</div>
+</div>
+</div>
+
+<button><a href="/mentor/logout">Logout</a></button>
+
+<style>
+	body
+	{
+		background: rgb(0,150,121);
+background: linear-gradient(27deg, rgba(0,150,121,1) 0%, rgba(0,212,255,1) 100%);
+	}
+	.centre
+	{
+	display: flex;
+flex-direction: row;
+flex-basis: 40%;
+flex-wrap: wrap;
+pading:2%;
+margin: 2%;
+justify-content: space-around;
+align-items: center;
+
+color: black;
+	}
+.det
+{
+background-color: white;
+text-align: left;
+padding: 2%;
+font-size: 100%;
+border-radius: 25px;
+}
+	.image-container {
+  background-image: url("https://images.unsplash.com/photo-1514483127413-f72f273478c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"); /* The image used - important! */
+  background-size: cover;
+  position: relative; /* Needed to position the cutout text in the middle of the image */
+  height: 30vh; /* Some height */
+}
+
+.text {
+  background-color: white;
+  color: black;
+  font-size: 9vw; /* Responsive font size */
+  font-weight: bold;
+  margin: 0 auto; /* Center the text container */
+  padding: 1%;
+  width: 50%;
+  text-align: center; /* Center text */
+  position: absolute; /* Position text */
+  top: 50%; /* Position text in the middle */
+  left: 50%; /* Position text in the middle */
+  transform: translate(-50%, -50%); /* Position text in the middle */
+  mix-blend-mode: screen; /* This makes the cutout text possible */
+}
+</style>
+<script>
+	$('#content1').richText();
+	</script>
+<link rel="stylesheet" href="/richtext.min.css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/jquery.richtext.js"></script>
+<script src="/jquery.richtext.min.js"></script>
